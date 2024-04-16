@@ -1,12 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import ChallengeOneView from '../views/ChallengeOneView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home'
+      name: 'home',
+      component: ChallengeOneView
     },
     {
       path: '/challenge-one',

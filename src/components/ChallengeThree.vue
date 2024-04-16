@@ -71,7 +71,7 @@ const resetTotals = () => {
 .c3 {
   margin: 1rem auto;
   border: 1px solid var(--color-border);
-  padding: 1rem;
+  padding: 2rem;
   border-radius: 1rem;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 8px 0px;
 }
