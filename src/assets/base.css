@@ -35,6 +35,8 @@
   --color-heading: var(--vt-c-text-light-1);
   --color-text: var(--vt-c-text-light-1);
 
+  --color-button-text: var(--vt-c-text-light-1);
+
   --color-accent: var(--vt-c-accent);
 
   --section-gap: 160px;
@@ -55,6 +57,8 @@
 
     --color-heading: var(--vt-c-text-dark-1);
     --color-text: var(--vt-c-text-dark-2);
+
+    --color-button-text: var(--vt-c-text-light-1);
   }
 }
 

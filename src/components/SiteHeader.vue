@@ -25,7 +25,7 @@ header {
 img {
   display: block;
   margin: 0 auto 2rem;
-  max-width: 50%;
+  max-width: 25%;
 }
 
 nav {
@@ -33,5 +33,10 @@ nav {
   font-size: 12px;
   text-align: center;
   margin-top: 2rem;
+}
+@media (min-width: 1024px) {
+  img{
+    max-width: 50%;
+  }
 }
 </style>
