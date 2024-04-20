@@ -7,17 +7,19 @@ import { ref } from 'vue'
 
 //make the flipped attribute a prop so its easy to turn on and off for degugging
 
-const isFlipped = ref(true)
+const isFlippedX = ref(true)
+const isFlippedY = ref(false)
 </script>
 
 <template>
   <section>
     <h1>Challenge One</h1>
-    <div class="c1" :class="{ 'c1--flipped': isFlipped }">
+    <div class="c1" :class="{ 'c1--flipped': isFlippedX, 'c1--flipped-y': isFlippedY }">
       <h2>Flipped Content</h2>
       <img src="https://via.placeholder.com/350" alt="placeholder image" />
       <p>Some content that is flipped</p>
-      <button @click="isFlipped = !isFlipped">Click to flip</button>
+      <button @click="isFlippedX = !isFlippedX">Click to flip X Axis</button>
+      <button @click="isFlippedY = !isFlippedY">Click to flip Y Axis</button>
     </div>
   </section>
 </template>
@@ -35,6 +37,11 @@ const isFlipped = ref(true)
 
 .c1--flipped {
   transform: rotateY(180deg);
+  /* or  transform: scaleX(-1)*/
+}
+
+.c1--flipped-y {
+  transform: rotateX(180deg);
   /* or  transform: scaleX(-1)*/
 }
 
