@@ -27,17 +27,25 @@ const months = ref([
 //tax rate
 const taxRate = ref(0.08625)
 
-//calculate the yearly total, you could also write a function that calcs the monthly total returns it to display, but since its fairly simple we can just do it in the template
 const yearlyTotal = computed(() => {
+  //using a reduce to add up all the totals instead of a loop since its a bit cleaner
+  const yearlyTotal = months.value.reduce((acc, month) => acc + month.total, 0)
+  return yearlyTotal.toFixed(2)
+})
+
+//calculate the yearly total, you could also write a function that calcs the monthly total returns it to display, but since its fairly simple we can just do it in the template
+const yearlyTaxTotal = computed(() => {
   //using a reduce to add up all the totals instead of a loop since its a bit cleaner
   const yearlyTotal = months.value.reduce((acc, month) => acc + month.total * taxRate.value, 0)
   return yearlyTotal.toFixed(2)
 })
 
+
 // a function to reset the totals
 const resetTotals = () => {
   months.value.forEach((month) => (month.total = 0))
 }
+
 </script>
 
 <template>
@@ -61,7 +69,11 @@ const resetTotals = () => {
 
       <div class="c3__yearly">
         <button @click="resetTotals">Reset Totals</button>
-        <span>Total Yearly Tax: ${{ yearlyTotal }}</span>
+        <div class="c3__yearly-text">
+          <span>Total Yearly Revenue: ${{ yearlyTotal }}</span>
+        <span>Total Yearly Tax: ${{ yearlyTaxTotal }}</span>
+        </div>
+
       </div>
     </div>
   </section>
@@ -97,7 +109,13 @@ const resetTotals = () => {
 }
 
 .c3__yearly span {
-  font-size: 2rem;
+  font-size: 1.25rem;
   font-weight: bold;
+}
+.c3__yearly-text{
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  align-items: end;
 }
 </style>

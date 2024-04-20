@@ -34,6 +34,7 @@ button:hover {
 button:disabled {
   background-color: hsl(193.88deg 61% 90.25%);
   cursor: not-allowed;
+  color: lightgrey;
 }
 @media (hover: hover) {
   a:hover {
@@ -50,7 +51,6 @@ button:disabled {
   #app {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
   }
 }
 
